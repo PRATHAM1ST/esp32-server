@@ -26,8 +26,19 @@ app.post("/", async (req, res) => {
 	}
 });
 
+
+
 app.get("/", (req, res) => {
 	res.send("Hello World !!!");
+});
+
+app.get("/getFullData", async(req, res) => {
+	res.send(await Data.find({}))
+});
+
+app.get("/getNData/:num", async(req, res) => {
+	const num = req.params.num;
+	res.send(await Data.find({}).limit(num))
 });
 
 app.listen(PORT, () => console.log("server online"));
