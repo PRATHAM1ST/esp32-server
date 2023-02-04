@@ -11,7 +11,7 @@ const dataSchema = new mongoose.Schema({
 	req: String,
 	when: Number,
 	file: String,
-	body: { humidity: Number, temp: Number },
+	body: Object,
 	best_location_type: String,
 	best_location_when: Number,
 	best_lat: Number,
